@@ -45,6 +45,7 @@ func (w *WeatherService) CheckWeather(ctx context.Context, zipcode string) (*dom
 	}
 
 	return &domain.Result{
+		City:  locale.Locale,
 		TempC: weather.TempC,
 		TempF: weather.TempC*1.8 + 32,
 		TempK: weather.TempC + 273.15,

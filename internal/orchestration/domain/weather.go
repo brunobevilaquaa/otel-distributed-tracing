@@ -9,6 +9,7 @@ type WeatherResult struct {
 }
 
 type Result struct {
+	City  string
 	TempC float64
 	TempF float64
 	TempK float64

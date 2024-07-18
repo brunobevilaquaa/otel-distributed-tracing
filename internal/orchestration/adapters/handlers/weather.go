@@ -12,6 +12,7 @@ import (
 )
 
 type CheckWeatherResponse struct {
+	City  string  `json:"city"`
 	TempC float64 `json:"temp_C"`
 	TempF float64 `json:"temp_F"`
 	TempK float64 `json:"temp_K"`
@@ -54,6 +55,7 @@ func (wh *WeatherHandler) CheckWeather(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	res := CheckWeatherResponse{
+		City:  weather.City,
 		TempC: weather.TempC,
 		TempF: weather.TempF,
 		TempK: weather.TempK,

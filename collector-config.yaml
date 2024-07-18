@@ -7,6 +7,9 @@ receivers:
 exporters:
   logging:
 
+  zipkin:
+    endpoint: "http://zipkin:9411/api/v2/spans"
+
   otlp:
     endpoint: jaeger:4317
     tls:
@@ -20,4 +23,4 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [logging, otlp]
+      exporters: [logging, zipkin, otlp]
